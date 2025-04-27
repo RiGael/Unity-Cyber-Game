@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 using System.Linq;
 
 public class PasswordStrengthChecker : MonoBehaviour
@@ -12,39 +13,36 @@ public class PasswordStrengthChecker : MonoBehaviour
     public TMP_Text timeText;
 
     private bool isChecking;
-    private const float GUESSES_PER_SECOND = 1000000000000f; // 1 trillion
+    private const float GUESSES_PER_SECOND = 1000000000000f;
 
     void Start()
     {
-        if (checkButton != null)
-            checkButton.onClick.AddListener(CheckStrength);
-        
-        if (passwordInput != null)
-            passwordInput.Select();
+        checkButton.onClick.AddListener(CheckStrength);
+        StartCoroutine(SelectInputField());
     }
 
     void Update()
     {
-        if (passwordInput == null) return;
-
-        // Enter key submission
         if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) && !isChecking)
         {
             CheckStrength();
         }
 
-        // Maintain focus
         if (!passwordInput.isFocused)
         {
-            passwordInput.Select();
-            passwordInput.ActivateInputField();
+            StartCoroutine(SelectInputField());
         }
+    }
+
+    IEnumerator SelectInputField()
+    {
+        yield return null;
+        passwordInput.Select();
+        passwordInput.ActivateInputField();
     }
 
     void CheckStrength()
     {
-        if (passwordInput == null || strengthText == null || timeText == null) return;
-
         isChecking = true;
         string password = passwordInput.text.Trim();
 
@@ -63,6 +61,7 @@ public class PasswordStrengthChecker : MonoBehaviour
         strengthText.text = GetStrengthRating(password.Length, charVariety);
         timeText.text = FormatTime(seconds);
         isChecking = false;
+        StartCoroutine(SelectInputField());
     }
 
     int CalculateCharacterVariety(string password)
@@ -88,7 +87,7 @@ public class PasswordStrengthChecker : MonoBehaviour
         string[] units = { "seconds", "minutes", "hours", "days", "years", "centuries" };
         double[] divisors = { 1, 60, 3600, 86400, 31536000, 3153600000 };
 
-        for(int i = divisors.Length - 1; i >= 0; i--)
+        for (int i = divisors.Length - 1; i >= 0; i--)
         {
             if (seconds >= divisors[i])
             {

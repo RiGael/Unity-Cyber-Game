@@ -59,12 +59,13 @@
     <UnityVersion>2022.3.49f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\caram\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\caram\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="F:\Unity\2022.3.49f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="F:\Unity\2022.3.49f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\FirstPersonAudio.cs" />
+    <Compile Include="Assets\SmishingQuiz.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\ExtAirConditioner.cs" />
     <Compile Include="Assets\Passstrengthcheck.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\Jump.cs" />
@@ -75,17 +76,24 @@
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Clock.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\AirConditioner.cs" />
     <Compile Include="Assets\PasswordChecker.cs" />
+    <Compile Include="Assets\phishingaudio.cs" />
     <Compile Include="Assets\scr.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\YureiManagerBRP.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\OfficeChair.cs" />
     <Compile Include="Assets\TextScript.cs" />
+    <Compile Include="Assets\usbscam.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\TimeZoneEnum.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Audio.cs" />
+    <Compile Include="Assets\smishingquizint.cs" />
+    <Compile Include="Assets\shredder.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\Crouch.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\CeillingLight.cs" />
+    <Compile Include="Assets\PhoneScamManager.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Computer.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
     <Compile Include="Assets\Enviroment\enviroment\Office building\scripts\Door.cs" />
+    <Compile Include="Assets\PhishingQuiz.cs" />
+    <Compile Include="Assets\usbinteraction.cs" />
     <Compile Include="Assets\Enviroment\enviroment\Office building\scripts\DoorAction.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\Inspector\YureiInspector.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\TimeZoneConverter.cs" />
@@ -94,12 +102,15 @@
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\TurnOnAble.cs" />
     <Compile Include="Assets\strengthterminal.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\DeskLamp.cs" />
+    <Compile Include="Assets\usbscenario.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\Inspector\IgnoreInInspectorAttribute.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Setup\BrpSetup.cs" />
+    <Compile Include="Assets\PhoneInteraction.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Setup\UrpSetup.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\Zoom.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\YureiButtonAttribute.cs" />
     <Compile Include="Assets\Fries and Seagull\Interior 01\Scripts\Utility\YureiManagerURP.cs" />
+    <Compile Include="Assets\phishingquizinteraction.cs" />
     <Compile Include="Assets\StickyNoteInteraction.cs" />
     <Compile Include="Assets\SimpleUI.cs" />
     <Compile Include="Assets\Enviroment\enviroment\Office building\scripts\pass_on_parent.cs" />
@@ -118,6 +129,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\testui.uxml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

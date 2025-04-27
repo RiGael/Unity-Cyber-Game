@@ -11,12 +11,15 @@ public class ComputerInteraction2 : MonoBehaviour
     public FirstPersonMovement fpsMovement;
 
     private Renderer screenRenderer;
+    private Rigidbody playerRigidbody;
+    private bool isInteracting;
 
     void Start()
     {
         screenRenderer = GetComponent<Renderer>();
         screenRenderer.material = normalMaterial;
         passwordCheckUI.SetActive(false);
+        playerRigidbody = fpsMovement.GetComponent<Rigidbody>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -39,7 +42,7 @@ public class ComputerInteraction2 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (isInteracting && Input.GetKeyDown(KeyCode.Escape))
         {
             EndInteraction();
         }
@@ -47,14 +50,20 @@ public class ComputerInteraction2 : MonoBehaviour
 
     void StartInteraction()
     {
+        isInteracting = true;
         passwordCheckUI.SetActive(true);
         fpsMovement.enabled = false;
+        
+        playerRigidbody.velocity = Vector3.zero;
+        playerRigidbody.angularVelocity = Vector3.zero;
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    void EndInteraction()
+    public void EndInteraction()
     {
+        isInteracting = false;
         passwordCheckUI.SetActive(false);
         fpsMovement.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

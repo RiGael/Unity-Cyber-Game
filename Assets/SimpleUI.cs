@@ -18,9 +18,17 @@ public class SimpleUIController : MonoBehaviour
 
     void Update()
     {
+        // Submit on Enter/Return
         if (Input.GetKeyDown(KeyCode.Return) && uiPanel.activeSelf)
         {
             HandleSubmit();
+        }
+
+        // Force focus to input field
+        if (uiPanel.activeSelf && !inputField.isFocused)
+        {
+            inputField.Select();
+            inputField.ActivateInputField();
         }
     }
 
@@ -29,7 +37,7 @@ public class SimpleUIController : MonoBehaviour
         uiPanel.SetActive(true);
         inputField.text = "";
         resultText.text = "";
-        inputField.Select();
+        inputField.Select(); // Focus immediately
     }
 
     public void HideUI()
@@ -39,8 +47,8 @@ public class SimpleUIController : MonoBehaviour
 
     void HandleSubmit()
     {
-        string input = inputField.text;
+        string input = inputField.text.Trim();
         resultText.text = $"You entered: {input}";
-        // Add your custom logic here
+        // Add custom logic (e.g., password validation)
     }
 }

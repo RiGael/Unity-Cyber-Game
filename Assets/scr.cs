@@ -32,7 +32,7 @@ Remember: Real companies never ask for your password by email!
     void OnMouseDown()
     {
         // Show panel and set text when computer is clicked
-        infoPanel.SetActive(true);
+        infoPanel.SetActive(true);  // Removed the accidental 'g' at line start
         infoText.text = phishingInfo;
     }
 
